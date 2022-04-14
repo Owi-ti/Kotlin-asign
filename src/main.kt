@@ -1,7 +1,7 @@
 fun main(){
-    var i= CurrentAccount(134567890,"Esther Owiti",500)
-     deposit(2000.0)
-     println( i.balance)
+    var i= Currentaccount("Esther",376593,7580.0,)
+
+
      withdrawal(1500.0)
 
     var x=Product("lotion",500,180,"nice & lovely")
@@ -18,22 +18,24 @@ fun main(){
 
 
 }
-class CurrentAccount(var accountNumber:Int, var accountName:String,var balance:Int )
-   fun deposit(amount:Double):Double {
-      var a=0.0
+}
+open class Currentaccount(var accountName:String,var accountNumber:String,var accountBalance:Double){
+    fun deposit(amount:Double){
+        accountBalance+=amount
+        println(amount)
 
 
+    }
+    open fun withdrawn(amount: Double){
+        accountBalance-=amount
+        println(amount)
+    }
+    fun details(){
+        println("Account number $accountNumber with balance ${accountBalance} is operated by $accountName")
+    }
 
-
-
-
-
-
-
-
-
-
-   }
+}
+o
    fun withdrawal(amount: Double){
 
 
@@ -48,7 +50,16 @@ class CurrentAccount(var accountNumber:Int, var accountName:String,var balance:I
 
    }
 //2.
-class savingAccount(var accountNumber:Int, var accountName:String,var balance:Int)
+pen class savingsAccount(accountName: String,accountNumber: String,accountBalance: Double , var withdrawals:Int ):Currentaccount(accountName,accountNumber,accountBalance,) {
+    override fun withdrawn(amount: Double) {
+        if(withdrawals<=4){
+
+        }
+    }
+
+
+
+}
 
 
 
